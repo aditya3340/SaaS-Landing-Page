@@ -1,20 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import vector from "../Assests/Vector.png";
+import Hamburger from "./Hamburger";
 
 const Navbar = () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  function toggle() {
-    console.log('toggle')
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-
-    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active")
-    }) )
-  }
+  
+  const [flag, setFlag] = useState(false)
 
   return (
     <div>
@@ -23,7 +13,15 @@ const Navbar = () => {
           <a href="/#" className="nav-branding">
             <img src={vector} alt="brand" />
           </a>
-          <ul className="nav-menu">
+          
+          <div className="hamburger" onClick={() => setFlag(!flag)}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </div>
+        </nav>
+
+        {!flag ? <ul className="nav-menu">
             <li className="nav-item">
               <a href="/#" className="nav-link">
                 HOW IT WORKS
@@ -52,13 +50,7 @@ const Navbar = () => {
             <li className="nav-item">
               <button className="navbar-btn">GET STARTED</button>
             </li>
-          </ul>
-          <div className="hamburger" onClick={toggle}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </div>
-        </nav>
+          </ul> : <Hamburger />}
       </header>
     </div>
   );
