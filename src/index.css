@@ -187,23 +187,23 @@ li {
 }
 
 .head {
-  max-width: 55%;
+  max-width: 80%;
   margin: auto;
   text-align: center;
   padding-top: 100px;
-  font-size: 4vmin;
+  font-size: 6vmin;
 }
 .head > span {
   color: #f86642;
 }
 
 .quote {
-  max-width: 55%;
+  max-width: 70%;
   margin: auto;
   text-align: center;
   padding-top: 20px;
   font-weight: 500;
-  font-size: 2vmin;
+  font-size: 2.3vmin;
 }
 
 .card-container {
@@ -219,7 +219,7 @@ li {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   text-align: center;
 
@@ -229,4 +229,25 @@ li {
 .card > p {
   max-width: 80%;
   text-align: center;
+}
+
+
+.circle {
+  display: flex;
+  width: 7vmin;
+  height: 7vmin;
+  font-weight: bolder;
+  font-size: 4vmin;
+  background-image: linear-gradient( #FF734F ,#E83C11);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+
+}
+
+.signup_tut {
+  font-weight: bold;
+  color: #f86642;
+  max-width: 60%;
 }
