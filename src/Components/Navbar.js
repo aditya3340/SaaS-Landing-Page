@@ -1,18 +1,61 @@
-import React from 'react'
-import vector from '../Assests/Vector.png'
+import React from "react";
+import vector from "../Assests/Vector.png";
 
 const Navbar = () => {
-  return (
-    <div className='navbar'>
-        <img src= {vector} alt='navbar vector'/>
-        <a href='/#'>HOW IT WORKS</a>
-        <a href='/#'>ABOUT</a>
-        <a href='/#'>WORK</a>
-        <a href='/#'>PRICING</a>
-        <a href='/#'>BLOG</a>
-        <button className='navbar-btn'>GET STARTED</button>
-    </div>
-  )
-}
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
 
-export default Navbar
+  function toggle() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  return (
+    <div>
+      <header>
+        <nav className="navbar">
+          <a href="/#" className="nav-branding">
+            <img src={vector} alt="brand" />
+          </a>
+          <ul className="nav-menu">
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                HOW IT WORKS
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                ABOUT
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                WORK
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                PRICING
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                BLOG
+              </a>
+            </li>
+            <li className="nav-item">
+              <button className="navbar-btn">GET STARTED</button>
+            </li>
+          </ul>
+          <div className="hamburger" onClick={toggle}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </div>
+        </nav>
+      </header>
+    </div>
+  );
+};
+
+export default Navbar;
