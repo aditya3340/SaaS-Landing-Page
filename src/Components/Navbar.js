@@ -6,6 +6,7 @@ const Navbar = () => {
   const navMenu = document.querySelector(".nav-menu");
 
   function toggle() {
+    console.log('toggle')
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
   }
