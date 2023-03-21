@@ -19,9 +19,7 @@ const Navbar = () => {
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-        </nav>
-
-        {!flag ? <ul className="nav-menu">
+          <ul className="nav-menu">
             <li className="nav-item">
               <a href="/#" className="nav-link">
                 HOW IT WORKS
@@ -50,7 +48,11 @@ const Navbar = () => {
             <li className="nav-item">
               <button className="navbar-btn">GET STARTED</button>
             </li>
-          </ul> : <Hamburger />}
+          </ul> 
+        </nav>
+
+        {flag && <Hamburger/>}
+        
       </header>
     </div>
   );
